@@ -31,6 +31,31 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 Open http://127.0.0.1:8000
 
+## Live demo (Render)
+
+Do **not** deploy this app on Vercel. It is a FastAPI process with a background worker and SQLite. Vercel is serverless and will not keep the worker or database.
+
+Deploy on [Render](https://render.com):
+
+1. Sign in with GitHub.
+2. **New** → **Web Service**.
+3. Select `karthik1812068/Sustainability-Data-Assistant`.
+4. Render should pick up `render.yaml`. If it asks manually:
+   - Runtime: Python
+   - Build: `pip install -r requirements.txt`
+   - Start: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+5. Create Web Service and wait until the URL is live (first build can take a few minutes).
+6. Open the URL, click **Upload all 6 files**, wait until all rows are completed.
+
+Free Render services sleep when idle. The first open after a pause can take about a minute.
+
+The recruiter email can include:
+
+- GitHub: https://github.com/karthik1812068/Sustainability-Data-Assistant
+- Live demo: your Render URL (after the deploy finishes)
+- Optional: a 2-minute screen recording if the free server is asleep when they click
+
+
 On **Documents**, either:
 
 - **Choose files** — one PDF, or several together

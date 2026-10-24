@@ -22,6 +22,7 @@ from app.worker import (
     process_one,
     recover_stale_jobs,
     retry_document,
+    seed_dataset,
     seed_dataset_results,
 )
 
@@ -53,6 +54,9 @@ async def lifespan(_app: FastAPI):
         n = recover_stale_jobs(db)
         if n:
             log.info("Re-queued %s stale jobs after restart", n)
+        if db.query(Document).count() == 0:
+            seeded = seed_dataset(db)
+            log.info("Seeded %s assignment documents on startup", len(seeded))
     STOP.clear()
     task = asyncio.create_task(worker_loop())
     yield
