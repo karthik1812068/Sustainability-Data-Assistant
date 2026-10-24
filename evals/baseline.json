@@ -1,0 +1,979 @@
+{
+  "run_id": "128a0372-0978-41f2-8ba7-91b947328128",
+  "summary": {
+    "label": "baseline",
+    "mode": "baseline",
+    "n_cases": 12,
+    "passed": 5,
+    "failed": 7,
+    "average_score": 0.6361,
+    "pass_rate": 0.4167
+  },
+  "results": [
+    {
+      "case_id": "bills_consumption_period",
+      "score": 0.3333,
+      "passed": false,
+      "checks": [
+        {
+          "name": "has_number_47407",
+          "passed": false,
+          "detail": "looked for 47407"
+        },
+        {
+          "name": "has_number_63000",
+          "passed": false,
+          "detail": "looked for 63000"
+        },
+        {
+          "name": "any_phrase",
+          "passed": false,
+          "detail": "2024-04-01,01-04-2024,1 April 2024,April 2024"
+        },
+        {
+          "name": "period_hints",
+          "passed": false,
+          "detail": "2024-04,2024-06"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Adani Apr 2024 47407 kWh; BESCOM 1 Jun 2024 to 1 Jul 2024 63000 kWh. Different organisations.",
+      "question": "What electricity consumption does each bill report, and for which period?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom Adani commercial electricity bill.pdf (page 2): (Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations\n(as per 2XMonthly average)\n565245.25\nC)\nExisting Security Deposit before interest adjustment\n14300.00\nD) Interest on SD ( net of TDS, if applicable ) held with us for FY\n\nFrom BESCOM Commercial Electricity Bill.pdf (page 2): [No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, ",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "water_meter_match",
+      "score": 0.6667,
+      "passed": false,
+      "checks": [
+        {
+          "name": "has_number_12500",
+          "passed": true,
+          "detail": "looked for 12500"
+        },
+        {
+          "name": "has_number_14821",
+          "passed": true,
+          "detail": "looked for 14821"
+        },
+        {
+          "name": "has_number_2321",
+          "passed": true,
+          "detail": "looked for 2321"
+        },
+        {
+          "name": "any_phrase",
+          "passed": false,
+          "detail": "match,matches,yes"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "has_calculation",
+          "passed": false,
+          "detail": ""
+        }
+      ],
+      "notes": "14821 - 12500 = 2321 m3, matching billed units.",
+      "question": "Does the water consumption match the meter readings?",
+      "answer": "Based on similar passages:\n\nFrom BESCOM Commercial Electricity Bill.pdf (page 1): Constant\n4000\n4000\n4000\nConsumption\n63000\n63359.864\n232\nLess/Add:\nConsumption\n00\nNet Consumption\n63000\n63359.8632\n81\n232\n0.99\nTOD meter readings for meter ID\n0869494110\nTime Zone\nName of the Zone\nPresent Readings\nPrevious Readings\nConsumption\nMD Reading\n06:00 Hrs to 9:00 Hrs\nMorning Peak\n97.760002\n96.260002\n6000\n206.400009\n9:00 Hrs to 18:00 Hrs\nNormal\n360.899994\n351.380005\n38079.957031\n232\n18:00 Hrs to 22:00 Hrs\nOn Peak\n92.25\n89.790001\n9839.99609\n\nFrom BESCOM Commercial Electricity Bill.pdf (page 1): BESCOM GSTN No: 29AACCB1412G1Z5\nOffice of the Asst. Executive Engineer (Ele.), C, O&M Sub-division - S2 WILSON GARDEN\nRR No.\nAccount ID\nBill No.\nBilling Period\nBill Date\nDue Date\nDisconnection Date\n4770595203\n(S2HT250)\n0834397958\n083100368204\n01-06-2024 - 01-07-2024\n01-07-2024\n15-07-2024\n31-07-2024\nName & Address:\nPrestige Estates Projects Pvt\nLtd\nNo 26,Laskar Hosur Road,\nAdugodi,\nBANGALORE, KAR -560030\nType\nCommercial - HT2b\nWheeling Energy\n0\nTa\n\nFrom water_bill_invoice.pdf (page 1): METER DETAILS:\nMeter Number:\nMTR-COCA-HYD-001\nMeter Size:\n50 mm Digital Water Meter\nPrevious Reading (01-12-2025):\n12,500 Cubic Meters\nCurrent Reading (31-12-2025):\n14,821 Cubic Meters\nUnits Consumed (December 2025):\n2,321 Cubic Meters\nBILLING BREAKDOWN:\nDescription\nUnit Rate\nQuantity/Units\nAmount (INR)\nWater Supply Charges\n(Industrial)\n\u20b945.50/Cu.M\n2,321\n105,605.50\nFixed Meter Charges\n(Monthly)\n\u20b9500.00\n1\n500.00\nSewerage Charges (50%\nof water)\n\u20b922\n\nFrom Adani commercial electricity bill.pdf (page 2): lag\nTemporary supply consumers shall pay 1.5 times the Fixed/Demand Charges and\n1.25 times the Energy Charge applicable for this category.\nLT II (C)\nFixed\nEnergy\nWheeling\nFAC Rate\nCOMMERCIAL\nCharge\nCharge\nCharge\nCharge\nUnits/Month\nPer kVA\nPer Unit\nPer Unit\nAPR-24\nAll Units\n400.00\n6.20\n2.60\n0.65\n06:00 to 09:00 Hrs\n0.00\n09:00 to 12:00 Hrs\n0.50\n12:00 to 18:00 Hrs\n0.00\n18:00 to 22:00 Hrs\n1.00\n22:00 to 06:00 Hrs\n0.75-\nYOUR TARIFF STRUCTURE (EFFECTIVE ",
+      "evidence": [
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "Constant\n4000\n4000\n4000\nConsumption\n63000\n63359.864\n232\nLess/Add:\nConsumption\n00\nNet Consumption\n63000\n63359.8632\n81\n232\n0.99\nTOD meter readings for meter ID\n0869494110\nTime Zone\nName of the Zone\nPresent Readings\nPrevious Readings\nConsumption\nMD Reading\n06:00 Hrs to 9:00 Hrs\nMorn",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "BESCOM GSTN No: 29AACCB1412G1Z5\nOffice of the Asst. Executive Engineer (Ele.), C, O&M Sub-division - S2 WILSON GARDEN\nRR No.\nAccount ID\nBill No.\nBilling Period\nBill Date\nDue Date\nDisconnection Date\n4770595203\n(S2HT250)\n0834397958\n083100368204\n01-06-2024 - 01-07-2024\n01-07-2024\n15",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "METER DETAILS:\nMeter Number:\nMTR-COCA-HYD-001\nMeter Size:\n50 mm Digital Water Meter\nPrevious Reading (01-12-2025):\n12,500 Cubic Meters\nCurrent Reading (31-12-2025):\n14,821 Cubic Meters\nUnits Consumed (December 2025):\n2,321 Cubic Meters\nBILLING BREAKDOWN:\nDescription\nUnit Rate\nQua",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "lag\nTemporary supply consumers shall pay 1.5 times the Fixed/Demand Charges and\n1.25 times the Energy Charge applicable for this category.\nLT II (C)\nFixed\nEnergy\nWheeling\nFAC Rate\nCOMMERCIAL\nCharge\nCharge\nCharge\nCharge\nUnits/Month\nPer kVA\nPer Unit\nPer Unit\nAPR-24\nAll Units\n400.00",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "NOTES:\n1. This is an electronically generated invoice. No signature required.\n2. For meter reading disputes or billing inquiries, contact:\nbilling@hwsb.telangana.gov.in 3. Please refer to Invoice Number in all correspondence.\n4. Ensure timely payment to avoid water supply disconn",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "waste_total",
+      "score": 0.5,
+      "passed": false,
+      "checks": [
+        {
+          "name": "has_number_2.4",
+          "passed": false,
+          "detail": "looked for 2.4"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "1.0,0.5,0.4,MT,calculated"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "has_calculation",
+          "passed": false,
+          "detail": ""
+        }
+      ],
+      "notes": "1.0 + 0.5 + 0.5 + 0.4 = 2.4 MT system-calculated total.",
+      "question": "What total waste quantity is recorded?",
+      "answer": "Based on similar passages:\n\nFrom form 3 filled.docx.pdf (page 1): FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 600098\n2. Date of issuance of authorization\nand its reference number\n:\n20HFC28642716 dated 26/08/2020\n3. Description of Hazardous and other wastes handled (Generated or Rec\n\nFrom water_bill_invoice.pdf (page 2): Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per month\n\u2022 Water supply will be disconnected if payment is not received within 30 days\n\u2022 GST @ 5% is included in the total amount\n\u2022 All amounts are in Indian Rupees (INR)\nPAY\n\nFrom Adani commercial electricity bill.pdf (page 2): energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n147.20\n147.20\nReactive\nenergy\nReading\nPresent\n1432.53\nconsumption\n(Lag)\nPrevious\n1204.92\nRKVAH\n18,208\n18209\nReactive\nenergy\nReading\nPresent\n11.99\nconsumption\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, ",
+      "evidence": [
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n14",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Quarterly Summary!A1:J1",
+          "quote": "Sheet Quarterly Summary: Quarter | Period | Grid (kWh) | Solar (kWh) | Wind (kWh) | Total Renewable (kWh) | Total (kWh) | Renewable % | Grid Cost (INR) | Savings (INR)",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "workbook_monthly_vs_annual",
+      "score": 0.2,
+      "passed": false,
+      "checks": [
+        {
+          "name": "has_number_2425123",
+          "passed": false,
+          "detail": "looked for 2425123"
+        },
+        {
+          "name": "has_number_2427123",
+          "passed": false,
+          "detail": "looked for 2427123"
+        },
+        {
+          "name": "any_phrase",
+          "passed": false,
+          "detail": "disagree,differ,conflict,inconsist"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "has_inconsistency",
+          "passed": false,
+          "detail": ""
+        }
+      ],
+      "notes": "Monthly annual total 2,425,123 kWh vs quarterly sheet annual 2,427,123 kWh.",
+      "question": "Do the workbook's monthly values and annual summaries agree?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom quality_policy_nestle.pdf (page 2): Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentiality\nAll rights belong to Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Vevey, Switzerland.\n\u00a9 2026, Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A.\nDesign\nSoci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Corporat\n\nFrom form 3 filled.docx.pdf (page 1): FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 600098\n2. Date of issuance of authorization\nand its reference number\n:\n20HFC28642716 dated 26/08/2020\n3. Description of Hazardous and other wastes handled (Generated or Rec",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "policy_complaint_deadline",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "not specify,does not specify,no deadline,not specified,no."
+        },
+        {
+          "name": "forbid_within 24 hours",
+          "passed": true,
+          "detail": "within 24 hours"
+        },
+        {
+          "name": "forbid_within 48 hours",
+          "passed": true,
+          "detail": "within 48 hours"
+        },
+        {
+          "name": "forbid_7 days",
+          "passed": true,
+          "detail": "7 days"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "has_gap",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Policy has no customer-complaint SLA.",
+      "question": "Does the quality policy specify a deadline for resolving customer complaints?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom quality_policy_nestle.pdf (page 1): Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use\n\nFrom quality_policy_nestle.pdf (page 2): Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentiality\nAll rights belong to Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Vevey, Switzerland.\n\u00a9 2026, Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A.\nDesign\nSoci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Corporat",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "fy_2024_25_electricity",
+      "score": 0.6,
+      "passed": false,
+      "checks": [
+        {
+          "name": "has_number_47407",
+          "passed": false,
+          "detail": "looked for 47407"
+        },
+        {
+          "name": "has_number_63000",
+          "passed": false,
+          "detail": "looked for 63000"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "different organisation,different organization,cannot,incomplete,coverage"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Adani Apr-24 and BESCOM Jun-24 are in FY 2024-25. Workbook is calendar 2026. Different orgs, incomplete FY.",
+      "question": "For Indian financial year 2024-25, what electricity consumption is evidenced and how complete is the coverage?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom Adani commercial electricity bill.pdf (page 2): (Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations\n(as per 2XMonthly average)\n565245.25\nC)\nExisting Security Deposit before interest adjustment\n14300.00\nD) Interest on SD ( net of TDS, if applicable ) held with us for FY\n\nFrom Adani commercial electricity bill.pdf (page 1): Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal complaint redressal system(ICRS), visit our website:\nwww.adanielectricity.com\nWhatsapp Us on : 9594519122\nIMPORTANT MESSAGE\n\"Th\ni s\nbill\nf o\nrpowersupp\nl y\ncannotbe\nt r\nea\nt e\n",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "fy_2025_26_coverage",
+      "score": 0.75,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_2321",
+          "passed": false,
+          "detail": "looked for 2321"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "january,february,march,incomplete,coverage,2026"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Water Dec 2025 in FY 2025-26; workbook only Jan-Mar 2026 of that FY.",
+      "question": "For Indian FY 2025-26, what evidence exists and how complete is the coverage?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom form 3 filled.docx.pdf (page 1): FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 600098\n2. Date of issuance of authorization\nand its reference number\n:\n20HFC28642716 dated 26/08/2020\n3. Description of Hazardous and other wastes handled (Generated or Rec\n\nFrom Adani commercial electricity bill.pdf (page 2): (Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations\n(as per 2XMonthly average)\n565245.25\nC)\nExisting Security Deposit before interest adjustment\n14300.00\nD) Interest on SD ( net of TDS, if applicable ) held with us for FY",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "METER DETAILS:\nMeter Number:\nMTR-COCA-HYD-001\nMeter Size:\n50 mm Digital Water Meter\nPrevious Reading (01-12-2025):\n12,500 Cubic Meters\nCurrent Reading (31-12-2025):\n14,821 Cubic Meters\nUnits Consumed (December 2025):\n2,321 Cubic Meters\nBILLING BREAKDOWN:\nDescription\nUnit Rate\nQua",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "adani_amount_roles",
+      "score": 0.75,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_632023.17",
+          "passed": false,
+          "detail": "looked for 632023.17"
+        },
+        {
+          "name": "has_number_631515.48",
+          "passed": true,
+          "detail": "looked for 631515.48"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "current month,payable,due date"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        }
+      ],
+      "notes": "Must not treat 632023.17, 631515.48 and the after-due-date amount as the same figure.",
+      "question": "On the Adani electricity bill, what is the current month bill amount versus the total amount payable, and what is payable after the due date?",
+      "answer": "Based on similar passages:\n\nFrom Adani commercial electricity bill.pdf (page 2): Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nTotal\nBill\nAmount\n(A+B+C)\n631515.48\nAmount\ndeferred\n0.00\nDPC\npayable\nafter\ndue\ndate\n7900.29\n(C) Total bill amount with DPC\n639415.77\nYOU CAN USE RTGS/NEFT VIA NETBANKING F\n\nFrom Adani commercial electricity bill.pdf (page 2): (Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations\n(as per 2XMonthly average)\n565245.25\nC)\nExisting Security Deposit before interest adjustment\n14300.00\nD) Interest on SD ( net of TDS, if applicable ) held with us for FY\n\nFrom Adani commercial electricity bill.pdf (page 1): Scan QR code for\nCOMMERCIAL\nBILL OF SUPPLY\nkiosk payment\nTYPE OF SUPPLY\n09-05-2024\nPowai/Kurla/33/106/\nCONTRACT DEMAND (kVA)\nCYCLE NUMBER\n18-03-2023\nTARIFF\nBILL DATE\nBILLING STATUS\nCONNECTION DATE\nActive\n33\n100191304272\n100.00\nLT\nLT II (C)\nMETER STATUS\nBILL NUMBER\nRegular\nBILL DISTRIBUTION NO.\nPRESENT READING DATE\n30-04-2024\nPREVIOUS READING DATE\n31-03-2024\nJ KUMAR MEPL JV\n. KURLA LIONS GARDEN AHILYA DEVI UDYAN LBS\nMARG OPP TO KURLA (WEST) LA HOT\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, ",
+      "evidence": [
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Scan QR code for\nCOMMERCIAL\nBILL OF SUPPLY\nkiosk payment\nTYPE OF SUPPLY\n09-05-2024\nPowai/Kurla/33/106/\nCONTRACT DEMAND (kVA)\nCYCLE NUMBER\n18-03-2023\nTARIFF\nBILL DATE\nBILLING STATUS\nCONNECTION DATE\nActive\n33\n100191304272\n100.00\nLT\nLT II (C)\nMETER STATUS\nBILL NUMBER\nRegular\nBILL DI",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "missing_diesel",
+      "score": 0.5,
+      "passed": false,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": false,
+          "detail": "none,no diesel,not record,gap,not found,do not"
+        },
+        {
+          "name": "has_gap",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "No diesel evidence in the pack.",
+      "question": "What diesel fuel consumption is recorded in these documents?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom Adani commercial electricity bill.pdf (page 2): energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n147.20\n147.20\nReactive\nenergy\nReading\nPresent\n1432.53\nconsumption\n(Lag)\nPrevious\n1204.92\nRKVAH\n18,208\n18209\nReactive\nenergy\nReading\nPresent\n11.99\nconsumption\n\nFrom form 3 filled.docx.pdf (page 1): FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 600098\n2. Date of issuance of authorization\nand its reference number\n:\n20HFC28642716 dated 26/08/2020\n3. Description of Hazardous and other wastes handled (Generated or Rec\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, ",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n14",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "NOTES:\n1. This is an electronically generated invoice. No signature required.\n2. For meter reading disputes or billing inquiries, contact:\nbilling@hwsb.telangana.gov.in 3. Please refer to Invoice Number in all correspondence.\n4. Ensure timely payment to avoid water supply disconn",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "org_mismatch",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "no,different organisation,different organization,must not,cannot"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "J Kumar, Prestige, Coca-Cola, TMTE, Nestl\u00e9, unnamed workbook.",
+      "question": "Can we report a single company-wide electricity total from these documents?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom Adani commercial electricity bill.pdf (page 2): Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nTotal\nBill\nAmount\n(A+B+C)\n631515.48\nAmount\ndeferred\n0.00\nDPC\npayable\nafter\ndue\ndate\n7900.29\n(C) Total bill amount with DPC\n639415.77\nYOU CAN USE RTGS/NEFT VIA NETBANKING F\n\nFrom BESCOM Commercial Electricity Bill.pdf (page 2): [No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "form3_date_inconsistency",
+      "score": 0.3333,
+      "passed": false,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": false,
+          "detail": "2022,2023,inconsist"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        },
+        {
+          "name": "has_inconsistency",
+          "passed": false,
+          "detail": ""
+        }
+      ],
+      "notes": "Rows dated 10.03.2023; occupier signed 08.03.2022.",
+      "question": "Is there a date inconsistency on the hazardous waste Form 3?",
+      "answer": "Based on similar passages:\n\nFrom form 3 filled.docx.pdf (page 1): FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 600098\n2. Date of issuance of authorization\nand its reference number\n:\n20HFC28642716 dated 26/08/2020\n3. Description of Hazardous and other wastes handled (Generated or Rec\n\nFrom BESCOM Commercial Electricity Bill.pdf (page 2): [No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]\n\nFrom quality_policy_nestle.pdf (page 2): Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentiality\nAll rights belong to Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Vevey, Switzerland.\n\u00a9 2026, Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A.\nDesign\nSoci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Corporat\n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. ",
+      "evidence": [
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    },
+    {
+      "case_id": "policy_food_safety",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "non-negotiable,executive board,june 2026"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "6 items"
+        }
+      ],
+      "notes": "Clause present; approver Executive Board, Nestl\u00e9 S.A., June 2026.",
+      "question": "Does Nestl\u00e9's quality policy say food safety is non-negotiable, and who approved it?",
+      "answer": "Based on similar passages:\n\nFrom quality_policy_nestle.pdf (page 3): 1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compliance are\nNon-Negotiable\nWe never compromise on food safety and\ncompliance. We adhere to internationally\nrecognized food safety management systems\nand comply with legal, \n\nFrom quality_policy_nestle.pdf (page 3): Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, speak up, drive continuous\nimprovement - and is recognized for their\ncontributions.\nWith these commitments, we protect our\nconsumers, safeguard our brands, and build\ntrust. \n\nFrom quality_policy_nestle.pdf (page 1): Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use\n\nFrom quality_policy_nestle.pdf (page 2): Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentiality\nAll rights belong to Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Vevey, Switzerland.\n\u00a9 2026, Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A.\nDesign\nSoci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A., Corporat",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Baseline mode does not run the financial-year coverage engine or amount-role disambiguation."
+      ],
+      "inconsistencies": [],
+      "confidence": "medium"
+    }
+  ]
+}

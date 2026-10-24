@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustainability Data Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <p>KuKi assignment</p>
+        <h1>Sustainability Data Assistant</h1>
+      </div>
+    </div>
+    <div id="health" class="status-pill">Checking backend…</div>
+  </header>
+  <div class="layout">
+    <nav>
+      <button class="active" data-panel="docs">Documents</button>
+      <button data-panel="extract">Extracted facts</button>
+      <button data-panel="ask">Ask</button>
+      <button data-panel="fy">Financial year</button>
+      <button data-panel="eval">Evaluation</button>
+    </nav>
+    <main>
+      <section id="docs" class="panel active">
+        <h2>Documents</h2>
+        <p class="lead">Upload one file or several together. Each file is processed on its own. If one fails, the others still finish. Status is saved in SQLite after a restart.</p>
+        <div class="drop" id="drop">
+          <p>Drop PDFs or the Excel file here, or choose files. You can select all 6 at once.</p>
+          <div class="row" style="justify-content:center; margin-top:10px;">
+            <label class="file-btn">Choose files<input id="file" type="file" multiple accept=".pdf,.xlsx,.xls" /></label>
+            <button class="primary" id="seed">Upload all 6 files</button>
+          </div>
+        </div>
+        <p id="upload-msg" class="muted"></p>
+        <div class="box" id="batch-box" hidden>
+          <h3>This batch</h3>
+          <div id="batch-view"></div>
+        </div>
+        <div class="cards" id="stats"></div>
+        <div class="box">
+          <h3>Each document</h3>
+          <div id="doc-table"></div>
+        </div>
+      </section>
+
+      <section id="extract" class="panel">
+        <h2>Extracted facts</h2>
+        <p class="lead">Each value has a source (page or sheet) and whether it was reported or calculated.</p>
+        <div class="row filter">
+          <select id="doc-select"></select>
+          <input id="fact-filter" type="text" placeholder="Filter facts" />
+        </div>
+        <div id="fact-meta" class="cards"></div>
+        <div class="box" id="fact-table"></div>
+      </section>
+
+      <section id="ask" class="panel">
+        <h2>Ask</h2>
+        <p class="lead">Answers include the source page or cell. Improved mode uses extracted facts and FY filters.</p>
+        <div class="box">
+          <textarea id="question" placeholder="Ask about consumption, quantities, policies, or a financial year…"></textarea>
+          <p class="muted" style="margin:10px 0 6px;">Ask over selected documents (leave all ticked to use every completed file).</p>
+          <div id="ask-docs" class="doc-picks"></div>
+          <div class="row" style="margin-top:10px;">
+            <select id="mode">
+              <option value="improved">Improved</option>
+              <option value="baseline">Baseline</option>
+            </select>
+            <select id="ask-fy">
+              <option value="">No FY filter</option>
+              <option>2022-23</option><option>2023-24</option><option>2024-25</option>
+              <option>2025-26</option><option>2026-27</option>
+            </select>
+            <button class="primary" id="ask-btn">Ask</button>
+          </div>
+          <p class="muted">Sample questions:</p>
+          <div id="ask-samples" class="samples"></div>
+        </div>
+        <div id="answer" style="margin-top:16px;"></div>
+      </section>
+
+      <section id="fy" class="panel">
+        <h2>Financial year</h2>
+        <p class="lead">Indian FY is 1 April to 31 March. Totals are per organisation, not combined.</p>
+        <div class="row filter">
+          <select id="fy-select">
+            <option>2022-23</option><option>2023-24</option><option selected>2024-25</option>
+            <option>2025-26</option><option>2026-27</option>
+          </select>
+          <button class="primary" id="fy-btn">Show coverage</button>
+        </div>
+        <div id="fy-view"></div>
+      </section>
+
+      <section id="eval" class="panel">
+        <h2>Evaluation</h2>
+        <p class="lead">12 test questions. Run baseline, then improved, and compare scores.</p>
+        <div class="row">
+          <button class="ghost" id="eval-base">Run baseline</button>
+          <button class="primary" id="eval-imp">Run improved</button>
+          <button class="ghost" id="eval-refresh">Refresh results</button>
+        </div>
+        <div id="eval-view" style="margin-top:16px;"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{
+  "baseline": {
+    "label": "baseline-v1",
+    "mode": "baseline",
+    "n_cases": 12,
+    "passed": 5,
+    "failed": 7,
+    "average_score": 0.6361,
+    "pass_rate": 0.4167
+  },
+  "improved": {
+    "label": "improved-v1",
+    "mode": "improved",
+    "n_cases": 12,
+    "passed": 12,
+    "failed": 0,
+    "average_score": 1.0,
+    "pass_rate": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "adani_amount_roles",
+      "baseline_score": 0.75,
+      "improved_score": 1.0,
+      "delta": 0.25,
+      "baseline_passed": true,
+      "improved_passed": true,
+      "question": "On the Adani electricity bill, what is the current month bill amount versus the total amount payable, and what is payable after the due date?"
+    },
+    {
+      "case_id": "bills_consumption_period",
+      "baseline_score": 0.3333,
+      "improved_score": 1.0,
+      "delta": 0.6667,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "What electricity consumption does each bill report, and for which period?"
+    },
+    {
+      "case_id": "form3_date_inconsistency",
+      "baseline_score": 0.3333,
+      "improved_score": 1.0,
+      "delta": 0.6667,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "Is there a date inconsistency on the hazardous waste Form 3?"
+    },
+    {
+      "case_id": "fy_2024_25_electricity",
+      "baseline_score": 0.6,
+      "improved_score": 1.0,
+      "delta": 0.4,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "For Indian financial year 2024-25, what electricity consumption is evidenced and how complete is the coverage?"
+    },
+    {
+      "case_id": "fy_2025_26_coverage",
+      "baseline_score": 0.75,
+      "improved_score": 1.0,
+      "delta": 0.25,
+      "baseline_passed": true,
+      "improved_passed": true,
+      "question": "For Indian FY 2025-26, what evidence exists and how complete is the coverage?"
+    },
+    {
+      "case_id": "missing_diesel",
+      "baseline_score": 0.5,
+      "improved_score": 1.0,
+      "delta": 0.5,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "What diesel fuel consumption is recorded in these documents?"
+    },
+    {
+      "case_id": "org_mismatch",
+      "baseline_score": 1.0,
+      "improved_score": 1.0,
+      "delta": 0.0,
+      "baseline_passed": true,
+      "improved_passed": true,
+      "question": "Can we report a single company-wide electricity total from these documents?"
+    },
+    {
+      "case_id": "policy_complaint_deadline",
+      "baseline_score": 1.0,
+      "improved_score": 1.0,
+      "delta": 0.0,
+      "baseline_passed": true,
+      "improved_passed": true,
+      "question": "Does the quality policy specify a deadline for resolving customer complaints?"
+    },
+    {
+      "case_id": "policy_food_safety",
+      "baseline_score": 1.0,
+      "improved_score": 1.0,
+      "delta": 0.0,
+      "baseline_passed": true,
+      "improved_passed": true,
+      "question": "Does Nestl\u00e9's quality policy say food safety is non-negotiable, and who approved it?"
+    },
+    {
+      "case_id": "waste_total",
+      "baseline_score": 0.5,
+      "improved_score": 1.0,
+      "delta": 0.5,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "What total waste quantity is recorded?"
+    },
+    {
+      "case_id": "water_meter_match",
+      "baseline_score": 0.6667,
+      "improved_score": 1.0,
+      "delta": 0.3333,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "Does the water consumption match the meter readings?"
+    },
+    {
+      "case_id": "workbook_monthly_vs_annual",
+      "baseline_score": 0.2,
+      "improved_score": 1.0,
+      "delta": 0.8,
+      "baseline_passed": false,
+      "improved_passed": true,
+      "question": "Do the workbook's monthly values and annual summaries agree?"
+    }
+  ],
+  "improved_cases": [
+    "adani_amount_roles",
+    "bills_consumption_period",
+    "form3_date_inconsistency",
+    "fy_2024_25_electricity",
+    "fy_2025_26_coverage",
+    "missing_diesel",
+    "waste_total",
+    "water_meter_match",
+    "workbook_monthly_vs_annual"
+  ],
+  "regressed_cases": [],
+  "unchanged": [
+    "org_mismatch",
+    "policy_complaint_deadline",
+    "policy_food_safety"
+  ]
+}

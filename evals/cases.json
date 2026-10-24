@@ -1,0 +1,125 @@
+[
+  {
+    "id": "bills_consumption_period",
+    "question": "What electricity consumption does each bill report, and for which period?",
+    "expect_numbers": [47407, 63000],
+    "expect_any_phrases": ["2024-04-01", "01-04-2024", "1 April 2024", "April 2024"],
+    "expect_all_phrases": [],
+    "expect_period_hints": ["2024-04", "2024-06"],
+    "forbid_phrases": [],
+    "require_evidence": true,
+    "require_gap_or_org_warning": true,
+    "sources": ["Adani commercial electricity bill.pdf page 1", "BESCOM Commercial Electricity Bill.pdf page 1"],
+    "notes": "Adani Apr 2024 47407 kWh; BESCOM 1 Jun 2024 to 1 Jul 2024 63000 kWh. Different organisations."
+  },
+  {
+    "id": "water_meter_match",
+    "question": "Does the water consumption match the meter readings?",
+    "expect_numbers": [12500, 14821, 2321],
+    "expect_any_phrases": ["match", "matches", "yes"],
+    "expect_all_phrases": [],
+    "require_evidence": true,
+    "require_calculation": true,
+    "sources": ["water_bill_invoice.pdf page 1"],
+    "notes": "14821 - 12500 = 2321 m3, matching billed units."
+  },
+  {
+    "id": "waste_total",
+    "question": "What total waste quantity is recorded?",
+    "expect_numbers": [2.4],
+    "expect_any_phrases": ["1.0", "0.5", "0.4", "MT", "calculated"],
+    "require_evidence": true,
+    "require_calculation": true,
+    "sources": ["form 3 filled.docx.pdf"],
+    "notes": "1.0 + 0.5 + 0.5 + 0.4 = 2.4 MT system-calculated total."
+  },
+  {
+    "id": "workbook_monthly_vs_annual",
+    "question": "Do the workbook's monthly values and annual summaries agree?",
+    "expect_numbers": [2425123, 2427123],
+    "expect_any_phrases": ["disagree", "differ", "conflict", "inconsist"],
+    "require_evidence": true,
+    "require_inconsistency": true,
+    "sources": ["Annual Electricity Consumption.xlsx monthly annual cell", "Annual Electricity Consumption.xlsx quarterly annual cell"],
+    "notes": "Monthly annual total 2,425,123 kWh vs quarterly sheet annual 2,427,123 kWh."
+  },
+  {
+    "id": "policy_complaint_deadline",
+    "question": "Does the quality policy specify a deadline for resolving customer complaints?",
+    "expect_numbers": [],
+    "expect_any_phrases": ["not specify", "does not specify", "no deadline", "not specified", "no."],
+    "forbid_phrases": ["within 24 hours", "within 48 hours", "7 days"],
+    "require_evidence": true,
+    "require_gap": true,
+    "sources": ["quality_policy_nestle.pdf"],
+    "notes": "Policy has no customer-complaint SLA."
+  },
+  {
+    "id": "fy_2024_25_electricity",
+    "question": "For Indian financial year 2024-25, what electricity consumption is evidenced and how complete is the coverage?",
+    "fy": "2024-25",
+    "expect_numbers": [47407, 63000],
+    "expect_any_phrases": ["different organisation", "different organization", "cannot", "incomplete", "coverage"],
+    "require_evidence": true,
+    "require_gap_or_org_warning": true,
+    "sources": ["Adani commercial electricity bill.pdf", "BESCOM Commercial Electricity Bill.pdf"],
+    "notes": "Adani Apr-24 and BESCOM Jun-24 are in FY 2024-25. Workbook is calendar 2026. Different orgs, incomplete FY."
+  },
+  {
+    "id": "fy_2025_26_coverage",
+    "question": "For Indian FY 2025-26, what evidence exists and how complete is the coverage?",
+    "fy": "2025-26",
+    "expect_numbers": [2321],
+    "expect_any_phrases": ["january", "february", "march", "incomplete", "coverage", "2026"],
+    "require_gap_or_org_warning": true,
+    "require_evidence": true,
+    "sources": ["water_bill_invoice.pdf", "Annual Electricity Consumption.xlsx Jan-Mar 2026 rows"],
+    "notes": "Water Dec 2025 in FY 2025-26; workbook only Jan-Mar 2026 of that FY."
+  },
+  {
+    "id": "adani_amount_roles",
+    "question": "On the Adani electricity bill, what is the current month bill amount versus the total amount payable, and what is payable after the due date?",
+    "expect_numbers": [632023.17, 631515.48],
+    "expect_any_phrases": ["current month", "payable", "due date"],
+    "require_evidence": true,
+    "sources": ["Adani commercial electricity bill.pdf amount block"],
+    "notes": "Must not treat 632023.17, 631515.48 and the after-due-date amount as the same figure."
+  },
+  {
+    "id": "missing_diesel",
+    "question": "What diesel fuel consumption is recorded in these documents?",
+    "expect_numbers": [],
+    "expect_any_phrases": ["none", "no diesel", "not record", "gap", "not found", "do not"],
+    "require_gap": true,
+    "sources": [],
+    "notes": "No diesel evidence in the pack."
+  },
+  {
+    "id": "org_mismatch",
+    "question": "Can we report a single company-wide electricity total from these documents?",
+    "expect_numbers": [],
+    "expect_any_phrases": ["no", "different organisation", "different organization", "must not", "cannot"],
+    "require_gap_or_org_warning": true,
+    "sources": ["Adani commercial electricity bill.pdf", "BESCOM Commercial Electricity Bill.pdf", "Annual Electricity Consumption.xlsx"],
+    "notes": "J Kumar, Prestige, Coca-Cola, TMTE, Nestlé, unnamed workbook."
+  },
+  {
+    "id": "form3_date_inconsistency",
+    "question": "Is there a date inconsistency on the hazardous waste Form 3?",
+    "expect_numbers": [],
+    "expect_any_phrases": ["2022", "2023", "inconsist"],
+    "require_inconsistency": true,
+    "require_evidence": true,
+    "sources": ["form 3 filled.docx.pdf row dates and occupier signature"],
+    "notes": "Rows dated 10.03.2023; occupier signed 08.03.2022."
+  },
+  {
+    "id": "policy_food_safety",
+    "question": "Does Nestlé's quality policy say food safety is non-negotiable, and who approved it?",
+    "expect_numbers": [],
+    "expect_any_phrases": ["non-negotiable", "executive board", "june 2026"],
+    "require_evidence": true,
+    "sources": ["quality_policy_nestle.pdf"],
+    "notes": "Clause present; approver Executive Board, Nestlé S.A., June 2026."
+  }
+]

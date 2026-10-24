@@ -1,0 +1,2717 @@
+{
+  "run_id": "4257aea6-6eae-408a-ac3c-265b91bb945e",
+  "summary": {
+    "label": "improved",
+    "mode": "improved",
+    "n_cases": 12,
+    "passed": 12,
+    "failed": 0,
+    "average_score": 1.0,
+    "pass_rate": 1.0
+  },
+  "results": [
+    {
+      "case_id": "bills_consumption_period",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_47407",
+          "passed": true,
+          "detail": "looked for 47407"
+        },
+        {
+          "name": "has_number_63000",
+          "passed": true,
+          "detail": "looked for 63000"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "2024-04-01,01-04-2024,1 April 2024,April 2024"
+        },
+        {
+          "name": "period_hints",
+          "passed": true,
+          "detail": "2024-04,2024-06"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Adani Apr 2024 47407 kWh; BESCOM 1 Jun 2024 to 1 Jul 2024 63000 kWh. Different organisations.",
+      "question": "What electricity consumption does each bill report, and for which period?",
+      "answer": "J KUMAR MEPL JV reports 47,407 kWh for 2024-04-01 to 2024-04-30 (reported, Adani commercial electricity bill.pdf page 1). Prestige Estates Projects Pvt reports 63,000 kWh for 2024-06-01 to 2024-07-01 (reported, BESCOM Commercial Electricity Bill.pdf page 1).",
+      "evidence": [
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": ".5 632.450012 Difference 15.75 15.839966 0.058 Meter Constant 4000 4000 4000 Consumption 63000 63359.864 232 Less/Add: Consumption 00 Net Consumption 63000 63359.8632 81 232 0.99 TOD",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 63000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest Collection Centre (Cash/Cheque) Adani Electricity Bil",
+          "kind": "fact",
+          "name": "current_month_bill",
+          "role": "current_month_bill",
+          "provenance": "reported",
+          "value_num": 632023.17,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Amt r 626420.00 Discount r 5089.97 \u0000 Round sum payable after due date 30-05-2024 : Amt r 639410.00# DPC r 7900.29 The due date refers to only current bill amount, previous balance is pa",
+          "kind": "fact",
+          "name": "amount_after_due_date",
+          "role": "amount_after_due_date",
+          "provenance": "reported",
+          "value_num": 639410.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "document",
+          "quote": "J KUMAR MEPL JV",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "water_meter_match",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_12500",
+          "passed": true,
+          "detail": "looked for 12500"
+        },
+        {
+          "name": "has_number_14821",
+          "passed": true,
+          "detail": "looked for 14821"
+        },
+        {
+          "name": "has_number_2321",
+          "passed": true,
+          "detail": "looked for 2321"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "match,matches,yes"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "has_calculation",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "14821 - 12500 = 2321 m3, matching billed units.",
+      "question": "Does the water consumption match the meter readings?",
+      "answer": "Yes. Reported water consumption is 2,321 m3 for 2025-12-01 to 2025-12-31. Meter arithmetic 14821.0 \u2212 12500.0 = 2,321 m3, which matches the billed units.",
+      "evidence": [
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "500 Cubic Meters Current Reading (31-12-2025): 14,821 Cubic Meters Units Consumed (December 2025): 2,321 Cubic Meters BILLING BREAKDOWN: Description Unit Rate Quantity/Units Amount (I",
+          "kind": "fact",
+          "name": "water_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 2321.0,
+          "unit": "m3"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "Reported 2321.0 vs calculated 2321.0",
+          "kind": "fact",
+          "name": "meter_match",
+          "role": "reconciliation",
+          "provenance": "calculated",
+          "value_num": 0.0,
+          "unit": "m3"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": ".5 632.450012 Difference 15.75 15.839966 0.058 Meter Constant 4000 4000 4000 Consumption 63000 63359.864 232 Less/Add: Consumption 00 Net Consumption 63000 63359.8632 81 232 0.99 TOD",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 63000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "14821.0 - 12500.0 = 2321.0",
+          "kind": "fact",
+          "name": "consumption_from_readings",
+          "role": "calculated_from_meter",
+          "provenance": "calculated",
+          "value_num": 2321.0,
+          "unit": "m3"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "Constant\n4000\n4000\n4000\nConsumption\n63000\n63359.864\n232\nLess/Add:\nConsumption\n00\nNet Consumption\n63000\n63359.8632\n81\n232\n0.99\nTOD meter readings for meter ID\n0869494110\nTime Zone\nName of the Zone\nPresent Readings\nPrevious Readings\nConsumption\nMD Reading\n06:00 Hrs to 9:00 Hrs\nMorn",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "BESCOM GSTN No: 29AACCB1412G1Z5\nOffice of the Asst. Executive Engineer (Ele.), C, O&M Sub-division - S2 WILSON GARDEN\nRR No.\nAccount ID\nBill No.\nBilling Period\nBill Date\nDue Date\nDisconnection Date\n4770595203\n(S2HT250)\n0834397958\n083100368204\n01-06-2024 - 01-07-2024\n01-07-2024\n15",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "METER DETAILS:\nMeter Number:\nMTR-COCA-HYD-001\nMeter Size:\n50 mm Digital Water Meter\nPrevious Reading (01-12-2025):\n12,500 Cubic Meters\nCurrent Reading (31-12-2025):\n14,821 Cubic Meters\nUnits Consumed (December 2025):\n2,321 Cubic Meters\nBILLING BREAKDOWN:\nDescription\nUnit Rate\nQua",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "lag\nTemporary supply consumers shall pay 1.5 times the Fixed/Demand Charges and\n1.25 times the Energy Charge applicable for this category.\nLT II (C)\nFixed\nEnergy\nWheeling\nFAC Rate\nCOMMERCIAL\nCharge\nCharge\nCharge\nCharge\nUnits/Month\nPer kVA\nPer Unit\nPer Unit\nAPR-24\nAll Units\n400.00",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "NOTES:\n1. This is an electronically generated invoice. No signature required.\n2. For meter reading disputes or billing inquiries, contact:\nbilling@hwsb.telangana.gov.in 3. Please refer to Invoice Number in all correspondence.\n4. Ensure timely payment to avoid water supply disconn",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "14821.0 - 12500.0",
+          "result": 2321.0,
+          "note": "System-calculated consumption from reported meter readings."
+        }
+      ],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "waste_total",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_2.4",
+          "passed": true,
+          "detail": "looked for 2.4"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "1.0,0.5,0.4,MT,calculated"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "has_calculation",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "1.0 + 0.5 + 0.5 + 0.4 = 2.4 MT system-calculated total.",
+      "question": "What total waste quantity is recorded?",
+      "answer": "Hazardous waste line items: 1 MT 35.3 \u2013 ETP sludge, 0.50 MT 35.3 \u2013 ETP sludge, 0.50 MT Phosphate\nSludge, 0.40 MT 5.2 \u2013 Wastes. System-calculated total: 2.40 MT. Form-3 occupier signature date is 2022-03-08 but waste rows are dated 2023-03-10.",
+      "evidence": [
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "1.0 MT 35.3 \u2013 ETP sludge + 0.5 MT 35.3 \u2013 ETP sludge + 0.5 MT Phosphate\nSludge + 0.4 MT 5.2 \u2013 Wastes",
+          "kind": "fact",
+          "name": "waste_total",
+          "role": "calculated_total",
+          "provenance": "calculated",
+          "value_num": 2.4,
+          "unit": "MT"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A7:K7",
+          "quote": "May | 130200 | 75200 | 9500 | 84700 | 214900 | 39.4% | 1171800 | 762300 | 1171800 | High solar output",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 214900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A8:K8",
+          "quote": "June | 127800 | 72800 | 8900 | 81700 | 209500 | 39.0% | 1150200 | 735300 | 1150200 | Monsoon starting",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 209500.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A9:K9",
+          "quote": "July | 124500 | 58400 | 11200 | 69600 | 194100 | 35.9% | 1120500 | 626400 | 1120500 | Monsoon - reduced solar",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 194100.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n14",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Quarterly Summary!A1:J1",
+          "quote": "Sheet Quarterly Summary: Quarter | Period | Grid (kWh) | Solar (kWh) | Wind (kWh) | Total Renewable (kWh) | Total (kWh) | Renewable % | Grid Cost (INR) | Savings (INR)",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "1 + 0.50 + 0.50 + 0.40",
+          "result": 2.4,
+          "note": "System-calculated total. Individual line quantities are reported in the form."
+        }
+      ],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [
+        "Form-3 occupier signature date is 2022-03-08 but waste rows are dated 2023-03-10."
+      ],
+      "confidence": "high"
+    },
+    {
+      "case_id": "workbook_monthly_vs_annual",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_2425123",
+          "passed": true,
+          "detail": "looked for 2425123"
+        },
+        {
+          "name": "has_number_2427123",
+          "passed": true,
+          "detail": "looked for 2427123"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "disagree,differ,conflict,inconsist"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "has_inconsistency",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Monthly annual total 2,425,123 kWh vs quarterly sheet annual 2,427,123 kWh.",
+      "question": "Do the workbook's monthly values and annual summaries agree?",
+      "answer": "Sum of monthly totals (system-calculated) is 2,426,123 kWh from Monthly Summary 2026. Reported annual total on Annual Electricity Consumption.xlsx Monthly Summary 2026!A16:K16: 2,425,123 kWh. Reported annual total on Annual Electricity Consumption.xlsx Quarterly Summary!A7:J7: 2,427,123 kWh. Annual electricity totals disagree across workbook sheets: 2,425,123, 2,427,123 kWh. Annual totals differ across sheets: [2425123.0, 2427123.0] Treat as conflicting evidence, not a single total.",
+      "evidence": [
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A7:K7",
+          "quote": "May | 130200 | 75200 | 9500 | 84700 | 214900 | 39.4% | 1171800 | 762300 | 1171800 | High solar output",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 214900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A8:K8",
+          "quote": "June | 127800 | 72800 | 8900 | 81700 | 209500 | 39.0% | 1150200 | 735300 | 1150200 | Monsoon starting",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 209500.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A9:K9",
+          "quote": "July | 124500 | 58400 | 11200 | 69600 | 194100 | 35.9% | 1120500 | 626400 | 1120500 | Monsoon - reduced solar",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 194100.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A10:K10",
+          "quote": "August | 126300 | 61500 | 10800 | 72300 | 198600 | 36.4% | 1136700 | 650700 | 1136700 | Monsoon continues",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 198600.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A11:K11",
+          "quote": "September | 129800 | 66200 | 10300 | 76500 | 206300 | 37.1% | 1168200 | 688500 | 1168200 | Post-monsoon recovery",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 206300.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A12:K12",
+          "quote": "October | 131200 | 69800 | 10600 | 80400 | 211600 | 38.0% | 1180800 | 723600 | 1180800 | Good weather conditions",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 211600.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "sum(monthly total consumption)",
+          "result": 2426123.0,
+          "note": "Calculated from monthly rows, not copied from the annual total cell."
+        }
+      ],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [
+        "Annual electricity totals disagree across workbook sheets: 2,425,123, 2,427,123 kWh. Annual totals differ across sheets: [2425123.0, 2427123.0] Treat as conflicting evidence, not a single total."
+      ],
+      "confidence": "high"
+    },
+    {
+      "case_id": "policy_complaint_deadline",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "not specify,does not specify,no deadline,not specified,no."
+        },
+        {
+          "name": "forbid_within 24 hours",
+          "passed": true,
+          "detail": "within 24 hours"
+        },
+        {
+          "name": "forbid_within 48 hours",
+          "passed": true,
+          "detail": "within 48 hours"
+        },
+        {
+          "name": "forbid_7 days",
+          "passed": true,
+          "detail": "7 days"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "17 items"
+        },
+        {
+          "name": "has_gap",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Policy has no customer-complaint SLA.",
+      "question": "Does the quality policy specify a deadline for resolving customer complaints?",
+      "answer": "No. The quality policy does not specify a deadline for resolving customer complaints. The document covers food safety and quality commitments, not complaint SLAs.",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "No customer-complaint resolution deadline found in the policy text.",
+          "kind": "fact",
+          "name": "customer_complaint_deadline",
+          "role": "policy_gap",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Date of approval\nJune 2026",
+          "kind": "fact",
+          "name": "approval_date",
+          "role": "date",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "Nestl\u00e9 S.A.",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "quality_policy_nestle.pdf",
+          "kind": "fact",
+          "name": "document_type",
+          "role": "metadata",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and Quality Policy",
+          "kind": "fact",
+          "name": "policy_title",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Approver\nExecutive Board, Nestl\u00e9 S.A.",
+          "kind": "fact",
+          "name": "approver",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Philipp Navratil\nChief Executive Officer",
+          "kind": "fact",
+          "name": "signatory",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "On behalf of the Executive Team, Philipp Navratil Chief Executive Officer Food Safety and Compliance are Non-Negotiable We never compromise on food safety and compliance.",
+          "kind": "fact",
+          "name": "food_safety_non_negotiable",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Quality is End-to-End Quality is embedded across the entire value chain, from ideation to responsibly sourced ingredients, manufacturing, packaging, and delivery to the point of consumption.",
+          "kind": "fact",
+          "name": "quality_end_to_end",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy Food Safety and Quality are Everyone\u2019s Responsibility Each of us plays a vital role in delivering our promise of food safety and quality in the products we make.",
+          "kind": "fact",
+          "name": "everyone_responsibility",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity.",
+        "Customer-complaint resolution deadline is not present in the policy."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "fy_2024_25_electricity",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_47407",
+          "passed": true,
+          "detail": "looked for 47407"
+        },
+        {
+          "name": "has_number_63000",
+          "passed": true,
+          "detail": "looked for 63000"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "different organisation,different organization,cannot,incomplete,coverage"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Adani Apr-24 and BESCOM Jun-24 are in FY 2024-25. Workbook is calendar 2026. Different orgs, incomplete FY.",
+      "question": "For Indian financial year 2024-25, what electricity consumption is evidenced and how complete is the coverage?",
+      "answer": "J KUMAR MEPL JV reports 47,407 kWh for 2024-04-01 to 2024-04-30 (reported, Adani commercial electricity bill.pdf page 1). Prestige Estates Projects Pvt reports 63,000 kWh for 2024-06-01 to 2024-07-01 (reported, BESCOM Commercial Electricity Bill.pdf page 1). Indian FY 2024-25 is 2024-04-01 to 2025-03-31. - J KUMAR MEPL JV: 47,407 kWh for 2024-04-01 to 2024-04-30 (Adani commercial electricity bill.pdf page 1, reported). Organisation subtotal for J KUMAR MEPL JV (do not merge across companies): 47,407 kWh. - Prestige Estates Projects Pvt: 63,000 kWh for 2024-06-01 to 2024-07-01 (BESCOM Commercial Electricity Bill.pdf page 1, reported). Organisation subtotal for Prestige Estates Projects Pvt (do not merge across companies): 63,000 kWh. Coverage is incomplete unless every month of the FY is evidenced for the same organisation. Indian FY runs 1 April to 31 March. Requested FY 2024-25 covers 2024-04-01 to 2025-03-31. These documents belong to different organisations and cannot be summed into one company total. Evidence covers 2 distinct month-periods, not a full 12-month FY.",
+      "evidence": [
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A14:K14",
+          "quote": "December | 130500 | 59200 | 9700 | 68900 | 199400 | 34.6% | 1174500 | 620100 | 1174500 | Year end",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 199400.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A16:K16",
+          "quote": "ANNUAL TOTAL | 1533290 | 771065 | 120768 | 891833 | 2425123 | 36.8% | 13798610 | 8026497 | 13798610 | Full year 2026",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_annual_total",
+          "provenance": "reported",
+          "value_num": 2425123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A7:K7",
+          "quote": "May | 130200 | 75200 | 9500 | 84700 | 214900 | 39.4% | 1171800 | 762300 | 1171800 | High solar output",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 214900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A8:K8",
+          "quote": "June | 127800 | 72800 | 8900 | 81700 | 209500 | 39.0% | 1150200 | 735300 | 1150200 | Monsoon starting",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 209500.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity.",
+        "110 dated facts fall outside this FY."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "fy_2025_26_coverage",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_2321",
+          "passed": true,
+          "detail": "looked for 2321"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "january,february,march,incomplete,coverage,2026"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Water Dec 2025 in FY 2025-26; workbook only Jan-Mar 2026 of that FY.",
+      "question": "For Indian FY 2025-26, what evidence exists and how complete is the coverage?",
+      "answer": "Indian FY 2025-26 is 2025-04-01 to 2026-03-31. - Unnamed facility (electricity workbook): 200,823 kWh for 2026-01-01 to 2026-01-31 (Annual Electricity Consumption.xlsx Monthly Summary 2026!A3:K3, reported). - Unnamed facility (electricity workbook): 181,700 kWh for 2026-02-01 to 2026-02-28 (Annual Electricity Consumption.xlsx Monthly Summary 2026!A4:K4, reported). - Unnamed facility (electricity workbook): 201,800 kWh for 2026-03-01 to 2026-03-31 (Annual Electricity Consumption.xlsx Monthly Summary 2026!A5:K5, reported). Organisation subtotal for Unnamed facility (electricity workbook) (do not merge across companies): 584,323 kWh. - Coca-Cola Beverages India Pvt. Ltd.: 2,321 m3 for 2025-12-01 to 2025-12-31 (water_bill_invoice.pdf page 1, reported). Organisation subtotal for Coca-Cola Beverages India Pvt. Ltd. (do not merge across companies): 2,321 m3. Coverage is incomplete unless every month of the FY is evidenced for the same organisation. Indian FY runs 1 April to 31 March. Requested FY 2025-26 covers 2025-04-01 to 2026-03-31. These documents belong to different organisations and cannot be summed into one company total. Evidence covers 4 distinct month-periods, not a full 12-month FY.",
+      "evidence": [
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "1.0 MT 35.3 \u2013 ETP sludge + 0.5 MT 35.3 \u2013 ETP sludge + 0.5 MT Phosphate\nSludge + 0.4 MT 5.2 \u2013 Wastes",
+          "kind": "fact",
+          "name": "waste_total",
+          "role": "calculated_total",
+          "provenance": "calculated",
+          "value_num": 2.4,
+          "unit": "MT"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "No customer-complaint resolution deadline found in the policy text.",
+          "kind": "fact",
+          "name": "customer_complaint_deadline",
+          "role": "policy_gap",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "Reported 2321.0 vs calculated 2321.0",
+          "kind": "fact",
+          "name": "meter_match",
+          "role": "reconciliation",
+          "provenance": "calculated",
+          "value_num": 0.0,
+          "unit": "m3"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest Collection Centre (Cash/Cheque) Adani Electricity Bil",
+          "kind": "fact",
+          "name": "current_month_bill",
+          "role": "current_month_bill",
+          "provenance": "reported",
+          "value_num": 632023.17,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Amt r 626420.00 Discount r 5089.97 \u0000 Round sum payable after due date 30-05-2024 : Amt r 639410.00# DPC r 7900.29 The due date refers to only current bill amount, previous balance is pa",
+          "kind": "fact",
+          "name": "amount_after_due_date",
+          "role": "amount_after_due_date",
+          "provenance": "reported",
+          "value_num": 639410.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "document",
+          "quote": "J KUMAR MEPL JV",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 1",
+          "quote": "METER DETAILS:\nMeter Number:\nMTR-COCA-HYD-001\nMeter Size:\n50 mm Digital Water Meter\nPrevious Reading (01-12-2025):\n12,500 Cubic Meters\nCurrent Reading (31-12-2025):\n14,821 Cubic Meters\nUnits Consumed (December 2025):\n2,321 Cubic Meters\nBILLING BREAKDOWN:\nDescription\nUnit Rate\nQua",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity.",
+        "93 dated facts fall outside this FY."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "adani_amount_roles",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "has_number_632023.17",
+          "passed": true,
+          "detail": "looked for 632023.17"
+        },
+        {
+          "name": "has_number_631515.48",
+          "passed": true,
+          "detail": "looked for 631515.48"
+        },
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "current month,payable,due date"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        }
+      ],
+      "notes": "Must not treat 632023.17, 631515.48 and the after-due-date amount as the same figure.",
+      "question": "On the Adani electricity bill, what is the current month bill amount versus the total amount payable, and what is payable after the due date?",
+      "answer": "These bills contain several different amounts; they are not interchangeable:. - total payable: 631,515.48 INR (reported, Adani commercial electricity bill.pdf page 1). - amount after due date: 639,410 INR (reported, Adani commercial electricity bill.pdf page 1). - total payable: 808,528 INR (reported, BESCOM Commercial Electricity Bill.pdf page 1). - amount by discount date: 626,420 INR (reported, Adani commercial electricity bill.pdf page 1). - current month bill: 808,527.80 INR (reported, BESCOM Commercial Electricity Bill.pdf page 1). - total payable: 158,733.62 INR (reported, water_bill_invoice.pdf page 2). - current month bill: 632,023.17 INR (reported, Adani commercial electricity bill.pdf page 1). - previous outstanding: 2.31 INR (reported, Adani commercial electricity bill.pdf page 1). - energy charge: 293,923.40 INR (reported, Adani commercial electricity bill.pdf page 1). - demand charge: 34,382.40 INR (reported, Adani commercial electricity bill.pdf page 1). - demand charge: 246,375 INR (reported, BESCOM Commercial Electricity Bill.pdf page 1). - energy charge: 504,000 INR (reported, BESCOM Commercial Electricity Bill.pdf page 1).",
+      "evidence": [
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Amt r 626420.00 Discount r 5089.97 \u0000 Round sum payable after due date 30-05-2024 : Amt r 639410.00# DPC r 7900.29 The due date refers to only current bill amount, previous balance is pa",
+          "kind": "fact",
+          "name": "amount_after_due_date",
+          "role": "amount_after_due_date",
+          "provenance": "reported",
+          "value_num": 639410.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "er : 0834397958 Bank Name : Bank of India Branch : Cantonment IFSC : BKID00BSCOM Amount : 808528.00 Your Detailed Bill Amount (Rs.) Description Demand Charges: 675.00 KVA at Rs 365.00 pe",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 808528.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "hamwadi,Kurla West, Mumbai-400070 \u0000 Round sum payable by discount date 16-05-2024 : Amt r 626420.00 Discount r 5089.97 \u0000 Round sum payable after due date 30-05-2024 : Amt r 639410.00# DP",
+          "kind": "fact",
+          "name": "amount_by_discount_date",
+          "role": "amount_by_discount_date",
+          "provenance": "reported",
+          "value_num": 626420.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 1",
+          "quote": "0.00 Interest on Revenue 0.00 Interest on Tax 0.00 Tax 45948.12 Current Bill Amount 808527.80 Arrears 0.00 Bill Correction 0.00 Bill rounding adjustment 0.20 Net Payable Amount",
+          "kind": "fact",
+          "name": "current_bill_amount",
+          "role": "current_month_bill",
+          "provenance": "reported",
+          "value_num": 808527.8,
+          "unit": "INR"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "00.00 1 100.00 Subtotal: \u20b90.00 0 \u20b9151,174.88 Subtotal: \u20b9151,174.88 Tax (5% GST): \u20b97,558.74 TOTAL AMOUNT DUE: \u20b9158,733.62 Payment Status: PENDING PAYMENT TERMS & CONDITIONS: \u2022 Payment due",
+          "kind": "fact",
+          "name": "total_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 158733.62,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest Collection Centre (Cash/Cheque) Adani Electricity Bil",
+          "kind": "fact",
+          "name": "current_month_bill",
+          "role": "current_month_bill",
+          "provenance": "reported",
+          "value_num": 632023.17,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "document",
+          "quote": "J KUMAR MEPL JV",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "due date\n30-05-2024",
+          "kind": "fact",
+          "name": "due_date",
+          "role": "due_date",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Scan QR code for\nCOMMERCIAL\nBILL OF SUPPLY\nkiosk payment\nTYPE OF SUPPLY\n09-05-2024\nPowai/Kurla/33/106/\nCONTRACT DEMAND (kVA)\nCYCLE NUMBER\n18-03-2023\nTARIFF\nBILL DATE\nBILLING STATUS\nCONNECTION DATE\nActive\n33\n100191304272\n100.00\nLT\nLT II (C)\nMETER STATUS\nBILL NUMBER\nRegular\nBILL DI",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "missing_diesel",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "none,no diesel,not record,gap,not found,do not"
+        },
+        {
+          "name": "has_gap",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "No diesel evidence in the pack.",
+      "question": "What diesel fuel consumption is recorded in these documents?",
+      "answer": "None of the selected documents record diesel (or other fuel) consumption. This is a coverage gap.",
+      "evidence": [
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": ") CA NO:153394579 Bill Period: r 631510.00* APR-24 01-04-2024 - 30.04.2024 Units Consumed 47407 Previous Units : 43037 Current Month Bill r 632023.17 Previous Outstanding r 2.31 Nearest",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "billed_consumption",
+          "provenance": "reported",
+          "value_num": 47407.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A7:K7",
+          "quote": "May | 130200 | 75200 | 9500 | 84700 | 214900 | 39.4% | 1171800 | 762300 | 1171800 | High solar output",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 214900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A8:K8",
+          "quote": "June | 127800 | 72800 | 8900 | 81700 | 209500 | 39.0% | 1150200 | 735300 | 1150200 | Monsoon starting",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 209500.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A9:K9",
+          "quote": "July | 124500 | 58400 | 11200 | 69600 | 194100 | 35.9% | 1120500 | 626400 | 1120500 | Monsoon - reduced solar",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 194100.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A10:K10",
+          "quote": "August | 126300 | 61500 | 10800 | 72300 | 198600 | 36.4% | 1136700 | 650700 | 1136700 | Monsoon continues",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 198600.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "energy\nReading\nPresent\n1418.27\nconsumption\nPrevious\n1209.40\n22:00\nHrs\n-\n06:00\nHrs\nConsumption\n(kWh)\n16709\n16710\nMax\ndemand\n(MD)\nReading\n1.653\n(Recorded between\n06:00\n-\n22:00\nHrs)\nMD\n(kVA)\n132.24\n132.24\nMax\ndemand\n(MD)\nReading\n1.840\n(Recorded between\n00:00\n-\n24:00\nHrs)\nMD\n(kVA)\n14",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "NOTES:\n1. This is an electronically generated invoice. No signature required.\n2. For meter reading disputes or billing inquiries, contact:\nbilling@hwsb.telangana.gov.in 3. Please refer to Invoice Number in all correspondence.\n4. Ensure timely payment to avoid water supply disconn",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "0d10e383-1491-41d2-8c0f-b2ce328c5e80",
+          "filename": "water_bill_invoice.pdf",
+          "locator": "page 2",
+          "quote": "Processing Fee\n\u20b9100.00\n1\n100.00\nSubtotal:\n\u20b90.00\n0\n\u20b9151,174.88\nSubtotal:\n\u20b9151,174.88\nTax (5% GST):\n\u20b97,558.74\nTOTAL AMOUNT DUE:\n\u20b9158,733.62\nPayment Status:\nPENDING\nPAYMENT TERMS & CONDITIONS:\n\u2022 Payment due within 15 days from invoice date\n\u2022 Late payment attracts interest @ 2% per m",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity.",
+        "No diesel consumption evidence."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "org_mismatch",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "no,different organisation,different organization,must not,cannot"
+        },
+        {
+          "name": "org_or_coverage",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "J Kumar, Prestige, Coca-Cola, TMTE, Nestl\u00e9, unnamed workbook.",
+      "question": "Can we report a single company-wide electricity total from these documents?",
+      "answer": "No. The supplied documents are from different organisations and reporting periods, so they must not be reported as one company-wide total.",
+      "evidence": [
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Trends & Comparison",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "workbook",
+          "quote": "Annual totals differ across sheets: [2425123.0, 2427123.0]",
+          "kind": "fact",
+          "name": "cross_sheet_conflict",
+          "role": "inconsistency",
+          "provenance": "calculated",
+          "value_num": 2000.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A3:K3",
+          "quote": "January | 132590 | 57965 | 10268 | 68233 | 200823 | 34.0% | 1193310 | 614097 | 1193310 | Normal operations",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 200823.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A4:K4",
+          "quote": "February | 118400 | 54200 | 9100 | 63300 | 181700 | 34.8% | 1065600 | 569700 | 1065600 | Shorter month",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 181700.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A5:K5",
+          "quote": "March | 128500 | 62800 | 10500 | 73300 | 201800 | 36.3% | 1156500 | 659700 | 1156500 | Increased solar generation",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 201800.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A6:K6",
+          "quote": "April | 125600 | 68500 | 9800 | 78300 | 203900 | 38.4% | 1130400 | 704700 | 1130400 | Peak solar season begins",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 203900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A7:K7",
+          "quote": "May | 130200 | 75200 | 9500 | 84700 | 214900 | 39.4% | 1171800 | 762300 | 1171800 | High solar output",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 214900.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A8:K8",
+          "quote": "June | 127800 | 72800 | 8900 | 81700 | 209500 | 39.0% | 1150200 | 735300 | 1150200 | Monsoon starting",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 209500.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A9:K9",
+          "quote": "July | 124500 | 58400 | 11200 | 69600 | 194100 | 35.9% | 1120500 | 626400 | 1120500 | Monsoon - reduced solar",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 194100.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026!A10:K10",
+          "quote": "August | 126300 | 61500 | 10800 | 72300 | 198600 | 36.4% | 1136700 | 650700 | 1136700 | Monsoon continues",
+          "kind": "fact",
+          "name": "electricity_consumption",
+          "role": "workbook_month_total",
+          "provenance": "reported",
+          "value_num": 198600.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "Adjustments\n10.00Cr\n(B) Net other charges In current bill (Sum of a to e)\n510.00Cr\nTotal current month charges (A+B)\n631513.17\nPrevious month's bill amount\n553432.31\nPayment received up to (18-04-2024)\n553430.00\nPrompt/Advance payment discount\n0.00\n(C)\nNet\nprevious\nbalance\n2.31\nT",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    },
+    {
+      "case_id": "form3_date_inconsistency",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "2022,2023,inconsist"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "18 items"
+        },
+        {
+          "name": "has_inconsistency",
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "notes": "Rows dated 10.03.2023; occupier signed 08.03.2022.",
+      "question": "Is there a date inconsistency on the hazardous waste Form 3?",
+      "answer": "Hazardous waste line items: 1 MT 35.3 \u2013 ETP sludge, 0.50 MT 35.3 \u2013 ETP sludge, 0.50 MT Phosphate\nSludge, 0.40 MT 5.2 \u2013 Wastes. System-calculated total: 2.40 MT. Form-3 occupier signature date is 2022-03-08 but waste rows are dated 2023-03-10.",
+      "evidence": [
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "1.0 MT 35.3 \u2013 ETP sludge + 0.5 MT 35.3 \u2013 ETP sludge + 0.5 MT Phosphate\nSludge + 0.4 MT 5.2 \u2013 Wastes",
+          "kind": "fact",
+          "name": "waste_total",
+          "role": "calculated_total",
+          "provenance": "calculated",
+          "value_num": 2.4,
+          "unit": "MT"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 2",
+          "quote": "Date: 08.03.2022",
+          "kind": "fact",
+          "name": "occupier_signature_date",
+          "role": "date",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "d) Date Type of Waste with category as per Schedules I, II and III of these rules Total Quantity in MT Method of Storage Destined To or Received from 10.03 .2023 35.3 \u2013 ETP sludge 1.0 T It is stored in impervious bags TN",
+          "kind": "fact",
+          "name": "waste_quantity",
+          "role": "waste_item",
+          "provenance": "reported",
+          "value_num": 1.0,
+          "unit": "MT"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "vance payment discount 0.00 (C) Net previous balance 2.31 Total Bill Amount (A+B+C) 631515.48 Amount deferred 0.00 DPC payable after due date 7900.29 (C) Total bill amount with D",
+          "kind": "fact",
+          "name": "net_payable",
+          "role": "total_payable",
+          "provenance": "reported",
+          "value_num": 631515.48,
+          "unit": "INR"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Amt r 626420.00 Discount r 5089.97 \u0000 Round sum payable after due date 30-05-2024 : Amt r 639410.00# DPC r 7900.29 The due date refers to only current bill amount, previous balance is pa",
+          "kind": "fact",
+          "name": "amount_after_due_date",
+          "role": "amount_after_due_date",
+          "provenance": "reported",
+          "value_num": 639410.0,
+          "unit": "INR"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "document",
+          "quote": "TMTE METAL TECH PVT LTD",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Date of approval\nJune 2026",
+          "kind": "fact",
+          "name": "approval_date",
+          "role": "date",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "document",
+          "quote": "form 3 filled.docx.pdf",
+          "kind": "fact",
+          "name": "document_type",
+          "role": "metadata",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": " Method of Storage Destined To or Received from 10.03 .2023 35.3 \u2013 ETP sludge 1.0 T It is stored in impervious bags TNWML \u200b facility, Gummidipoondi 10.03 .2023 21.1 \u2013 Waste Powder 0.5 T It is stored in impervious bags Qu",
+          "kind": "fact",
+          "name": "waste_quantity",
+          "role": "waste_item",
+          "provenance": "reported",
+          "value_num": 0.5,
+          "unit": "MT"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": " T It is stored in impervious bags Quality Business Systems, Plot No: 505, SIDCO Industrial Estate, South Phase, Ambattur, Chennai - 600058 10.03 .2023 12.5 \u200b \u2013 \u200b Phosphate Sludge 0.5 T It is stored in impervious bags TN",
+          "kind": "fact",
+          "name": "waste_quantity",
+          "role": "waste_item",
+          "provenance": "reported",
+          "value_num": 0.5,
+          "unit": "MT"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": " Chennai - 600058 10.03 .2023 12.5 \u200b \u2013 \u200b Phosphate Sludge 0.5 T It is stored in impervious bags TNWML \u200b facility, Gummidipoondi 10.03 .2023 5.2 \u2013 Wastes or residues containing oil 0.4 T It is stored in impervious bags Qu",
+          "kind": "fact",
+          "name": "waste_quantity",
+          "role": "waste_item",
+          "provenance": "reported",
+          "value_num": 0.4,
+          "unit": "MT"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "20HFC28642716 dated 26/08/2020",
+          "kind": "fact",
+          "name": "authorization_ref",
+          "role": "identifier",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "788ebe00-9cb1-4dd7-b44d-1f4e7661deba",
+          "filename": "BESCOM Commercial Electricity Bill.pdf",
+          "locator": "page 2",
+          "quote": "[No extractable text on page 2 of BESCOM Commercial Electricity Bill.pdf. The page may be a scanned image.]",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 2",
+          "quote": "(Lead)\nPrevious\n11.84\nRKVAH\n12\n12\nYOUR CURRENT CONSUMPTION\nBilling demand is 85.96 kVA 65% of Maximum recorded demand during 06 to 22 Hrs.\nA) Monthly Average Bill Amount (For the period April 23 to Mar-24)\n282622.63\nB)\nSecurity Deposit to be maintained as per MERC SOP regulations",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [
+        {
+          "expression": "1 + 0.50 + 0.50 + 0.40",
+          "result": 2.4,
+          "note": "System-calculated total. Individual line quantities are reported in the form."
+        }
+      ],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [
+        "Form-3 occupier signature date is 2022-03-08 but waste rows are dated 2023-03-10."
+      ],
+      "confidence": "high"
+    },
+    {
+      "case_id": "policy_food_safety",
+      "score": 1.0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "any_phrase",
+          "passed": true,
+          "detail": "non-negotiable,executive board,june 2026"
+        },
+        {
+          "name": "has_evidence",
+          "passed": true,
+          "detail": "17 items"
+        }
+      ],
+      "notes": "Clause present; approver Executive Board, Nestl\u00e9 S.A., June 2026.",
+      "question": "Does Nestl\u00e9's quality policy say food safety is non-negotiable, and who approved it?",
+      "answer": "Yes. The policy states: \"On behalf of the Executive Team, Philipp Navratil Chief Executive Officer Food Safety and Compliance are Non-Negotiable We never compromise on food safety and compliance.\". Approver: Executive Board, Nestl\u00e9 S.A. (page 2). Date of approval: June 2026. Signed for the executive team by Philipp Navratil, Chief Executive Officer.",
+      "evidence": [
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "No customer-complaint resolution deadline found in the policy text.",
+          "kind": "fact",
+          "name": "customer_complaint_deadline",
+          "role": "policy_gap",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Date of approval\nJune 2026",
+          "kind": "fact",
+          "name": "approval_date",
+          "role": "date",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "Nestl\u00e9 S.A.",
+          "kind": "fact",
+          "name": "organization",
+          "role": "organization",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "document",
+          "quote": "quality_policy_nestle.pdf",
+          "kind": "fact",
+          "name": "document_type",
+          "role": "metadata",
+          "provenance": "calculated",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and Quality Policy",
+          "kind": "fact",
+          "name": "policy_title",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Approver\nExecutive Board, Nestl\u00e9 S.A.",
+          "kind": "fact",
+          "name": "approver",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Philipp Navratil\nChief Executive Officer",
+          "kind": "fact",
+          "name": "signatory",
+          "role": "policy",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "On behalf of the Executive Team, Philipp Navratil Chief Executive Officer Food Safety and Compliance are Non-Negotiable We never compromise on food safety and compliance.",
+          "kind": "fact",
+          "name": "food_safety_non_negotiable",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Quality is End-to-End Quality is embedded across the entire value chain, from ideation to responsibly sourced ingredients, manufacturing, packaging, and delivery to the point of consumption.",
+          "kind": "fact",
+          "name": "quality_end_to_end",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy Food Safety and Quality are Everyone\u2019s Responsibility Each of us plays a vital role in delivering our promise of food safety and quality in the products we make.",
+          "kind": "fact",
+          "name": "everyone_responsibility",
+          "role": "policy_clause",
+          "provenance": "reported",
+          "value_num": null,
+          "unit": null
+        },
+        {
+          "document_id": "ff20197a-a560-4d74-b247-8a3a1c4d02df",
+          "filename": "Annual Electricity Consumption.xlsx",
+          "locator": "Monthly Summary 2026",
+          "quote": "Sum of 12 monthly totals",
+          "kind": "fact",
+          "name": "workbook_monthly_sum",
+          "role": "calculated_annual_from_months",
+          "provenance": "calculated",
+          "value_num": 2426123.0,
+          "unit": "kWh"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "1\nFood Safety and Quality Policy\nAt Nestl\u00e9, Food Safety and Quality are at\nthe heart of everything we do. They are\nour foundation for trust and deeply rooted\nin our purpose and values.\nOn behalf of the Executive Team,\nPhilipp Navratil\nChief Executive Officer\nFood Safety and Compl",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 3",
+          "quote": "Nestl\u00e9 Food Safety and Quality Policy\nFood Safety and Quality are Everyone\u2019s\nResponsibility\nEach of us plays a vital role in delivering\nour promise of food safety and quality in\nthe products we make. We foster a culture\nwhere every individual is empowered and\nexpected to act, spe",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 1",
+          "quote": "Food Safety and\nQuality Policy\nPo\nPolicy\nMandatory\nGeneral Use",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "2fe5d11c-18f2-4f04-9b7f-74a57bf7f32f",
+          "filename": "quality_policy_nestle.pdf",
+          "locator": "page 2",
+          "quote": "Issuing department\nCorporate Quality Management\nTarget audience\nAll employees\nApprover\nExecutive Board, Nestl\u00e9 S.A.\nDate of approval\nJune 2026\nRepository\nAll Nestl\u00e9 Principles and Policies, Standards and Guidelines\ncan be found in NestleDocs, on the Nest\nCopyright and confidentia",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "3b30acb1-1fff-4188-aa60-b69890e0518a",
+          "filename": "form 3 filled.docx.pdf",
+          "locator": "page 1",
+          "quote": "FORM \u2013 3\n{See Rules 6(5), `13(7), 14(6), 16(5), and 20(1)}\nFORMAT FOR MAINTAINING RECORDS OF HAZARDOUS AND OTHER\nWASTES\n1. Name \u200b and \u200b Address \u200b of \u200b\nthe\nFacility\n:\nTMTE METAL TECH PVT LTD,\nPlot No: 25-A/2, Dairy Road, North Phase,\nSIDCO industrial Estate, Ambattur, Chennai - 60",
+          "kind": "chunk"
+        },
+        {
+          "document_id": "895fa1d6-474d-47f5-850c-77f69ca2e2e4",
+          "filename": "Adani commercial electricity bill.pdf",
+          "locator": "page 1",
+          "quote": "Borivali West, Mumbai 400 103\nJoin us on:\nHELP CENTER\n19122 Toll Free No.(24X7)\nhelpdesk.mumbaielectricity@adani.com\nwww.adanielectricity.com\nAdani Electricity Sakinaka Junction, Near park devis, Andheri(E)\n,Mumbai-400072\nPortal Related Complaint call us:19122\nFor internal compla",
+          "kind": "chunk"
+        }
+      ],
+      "calculations": [],
+      "gaps": [
+        "Documents relate to different organisations: Coca-Cola Beverages India Pvt. Ltd.; J KUMAR MEPL JV; Nestl\u00e9 S.A.; Prestige Estates Projects Pvt; TMTE METAL TECH PVT LTD; Unnamed facility (electricity workbook). Do not treat them as one reporting entity."
+      ],
+      "inconsistencies": [],
+      "confidence": "high"
+    }
+  ]
+}
